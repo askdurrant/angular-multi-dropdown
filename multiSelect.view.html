@@ -1,0 +1,13 @@
+<div class="ms-container">
+  <button type="button" class="ms-button" data-ng-click="showDropdown = !showDropdown">
+    Select items 
+    <i class="fa fa-angle-down" data-ng-show="showDropdown === false"></i>
+    <i class="fa fa-angle-up" data-ng-show="showDropdown === true"></i>
+  </button>
+  
+  <div class="ms-dropdown-container" data-ng-show="showDropdown" data-ng-mouseleave="dropDownMouseLeave();" data-ng-mouseenter="dropDownMouseEnter();">
+    <ul>
+      <li data-ng-click="select(option);" data-ng-repeat="option in data" data-ng-class="{'ms-active-li': selectedList.indexOf(option) != -1}">{{option.option}} <i class="fa fa-check" data-ng-show="selectedList.indexOf(option) != -1"></i></li>
+    </ul>
+  </div>
+</div>  
